@@ -1,5 +1,4 @@
-# eureka-js-client
-[![npm version](https://badge.fury.io/js/eureka-js-client.svg)](http://badge.fury.io/js/eureka-js-client) [![Build Status](https://api.travis-ci.org/jquatier/eureka-js-client.svg)](https://travis-ci.org/jquatier/eureka-js-client) [![Coverage Status](https://coveralls.io/repos/jquatier/eureka-js-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/jquatier/eureka-js-client?branch=master) [![Dependency Status](https://david-dm.org/jquatier/eureka-js-client.svg)](https://david-dm.org/jquatier/eureka-js-client)
+# eureka-client
 
 A JavaScript implementation of a client for Eureka (https://github.com/Netflix/eureka), the Netflix OSS service registry.
 
@@ -8,7 +7,7 @@ A JavaScript implementation of a client for Eureka (https://github.com/Netflix/e
 First, install the module into your node project:
 
 ```shell
-npm install eureka-js-client --save
+npm install eureka-client --save
 ```
 
 ### Add Eureka client to a Node application.
@@ -16,20 +15,20 @@ npm install eureka-js-client --save
 The Eureka module exports a JavaScript function that can be constructed.
 
 ```javascript
-import Eureka from 'eureka-js-client';
+import Eureka from 'eureka-client';
 
 // Or, if you're not using a transpiler:
-const Eureka = require('eureka-js-client').Eureka;
+const Eureka = require('eureka-client').Eureka;
 
 // example configuration
 const client = new Eureka({
   // application instance information
   instance: {
-    app: 'jqservice',
+    app: 'some-service',
     hostName: 'localhost',
     ipAddr: '127.0.0.1',
     port: 8080,
-    vipAddress: 'jq.test.something.com',
+    vipAddress: 'test.something.com',
     dataCenterInfo: {
       name: 'MyOwn',
     },
@@ -96,9 +95,9 @@ For AWS environments (`dataCenterInfo.name == 'Amazon'`) the client has built-in
 const client = new Eureka({
   // application instance information
   instance: {
-    app: 'jqservice',
+    app: 'some-service',
     port: 8080,
-    vipAddress: 'jq.test.something.com',
+    vipAddress: 'test.something.com',
     statusPageUrl: 'http://__HOST__:8080/',
     healthCheckUrl: 'http://__HOST__:8077/healthcheck',
     dataCenterInfo: {
