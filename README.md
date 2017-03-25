@@ -1,13 +1,13 @@
-# eureka-client
+# pcf-eureka-client
 
-A JavaScript implementation of a client for Eureka (https://github.com/Netflix/eureka), the Netflix OSS service registry.
-
+JS implementation of a client for Eureka (https://github.com/Netflix/eureka), the Netflix OSS service registry. 
+This is forked from Storytel/eureka-client (https://github.com/Storytel/eureka-client) to add OAuth2 related enhancements for Pivotal Cloud Foundry (PCF).
 ## Usage
 
 First, install the module into your node project:
 
 ```shell
-npm install eureka-client --save
+npm install pcf-eureka-client --save
 ```
 
 ### Add Eureka client to a Node application.
@@ -15,10 +15,10 @@ npm install eureka-client --save
 The Eureka module exports a JavaScript function that can be constructed.
 
 ```javascript
-import Eureka from 'eureka-client';
+import Eureka from 'pcf-eureka-client';
 
 // Or, if you're not using a transpiler:
-const Eureka = require('eureka-client').Eureka;
+const Eureka = require('pcf-eureka-client').Eureka;
 
 // example configuration
 const client = new Eureka({
@@ -39,10 +39,17 @@ const client = new Eureka({
       'http://192.168.99.100:32768/eureka/v2/apps/'
     ]
   },
+  oauth2: {
+      clientCredentials: {
+          client_id: '<client_id>',
+          client_secret: '<client_secret>',
+          access_token_uri: '<access_token_uri>'
+      }
+  }
 });
 ```
 
-The Eureka client searches for the YAML file `eureka-client.yml` in the current working directory. It further searches for environment specific overrides in the environment specific YAML files (e.g. `eureka-client-test.yml`). The environment is typically `development` or `production`, and is determined by the `NODE_ENV` environment variable. The options passed to the constructor overwrite any values that are set in configuration files.
+The Eureka client searches for the YAML file `pcf-eureka-client.yml` in the current working directory. It further searches for environment specific overrides in the environment specific YAML files (e.g. `pcf-eureka-client-test.yml`). The environment is typically `development` or `production`, and is determined by the `NODE_ENV` environment variable. The options passed to the constructor overwrite any values that are set in configuration files.
 
 You can configure a custom directory to load the configuration files from by specifying a `cwd` option in the object passed to the `Eureka` constructor.
 

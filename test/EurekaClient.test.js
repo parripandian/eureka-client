@@ -451,7 +451,7 @@ describe('Eureka client', () => {
     });
   });
 
-  describe('eureka-client.yml', () => {
+  describe('pcf-eureka-client.yml', () => {
     let stub;
     before(() => {
       stub = sinon.stub(process, 'cwd').returns(__dirname);

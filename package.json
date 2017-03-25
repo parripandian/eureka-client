@@ -1,7 +1,7 @@
 {
-  "name": "eureka-client",
-  "version": "1.1.0",
-  "description": "A JavaScript implementation the Netflix OSS service registry, Eureka.",
+  "name": "pcf-eureka-client",
+  "version": "0.0.1",
+  "description": "JS implementation of a client for Eureka (https://github.com/Netflix/eureka), the Netflix OSS service registry. This is forked from Storytel/pcf-eureka-client (https://github.com/Storytel/pcf-eureka-client) to add OAuth2 related enhancements for Pivotal Cloud Foundry (PCF).",
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "gulp",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Storytel/eureka-client.git"
+    "url": "https://github.com/parripandian/pcf-eureka-client.git"
   },
   "keywords": [
     "eureka",
@@ -19,17 +19,18 @@
     "registry",
     "netflix"
   ],
-  "author": "JQ",
+  "author": "Parri Pandian",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Storytel/eureka-client/issues"
+    "url": "https://github.com/parripandian/pcf-eureka-client/issues"
   },
-  "homepage": "https://github.com/Storytel/eureka-client",
+  "homepage": "https://github.com/parripandian/pcf-eureka-client",
   "dependencies": {
     "async": "^1.4.2",
     "js-yaml": "^3.3.1",
     "lodash": "^4.13.1",
-    "request": "^2.60.0"
+    "request": "^2.60.0",
+    "simple-oauth2": "^1.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
